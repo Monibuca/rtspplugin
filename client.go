@@ -375,7 +375,7 @@ func (this *RtspClient) AuthBasic(phase string, message string) bool {
 		return false
 	}
 	if status, message := this.Read(); status && strings.Contains(message, "200") {
-		this.track = ParseMedia(message)
+		this.track = this.ParseMedia(message)
 		return true
 	}
 	return false
